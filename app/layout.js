@@ -1,7 +1,8 @@
-import { Inter } from 'next/font/google'
+import { Fira_Code } from 'next/font/google'
 import './globals.css'
+import Header from '@/components/Header'
 
-const inter = Inter({ subsets: ['latin'] })
+const firaCode = Fira_Code({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Create Next App',
@@ -11,7 +12,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={ firaCode.className + " bg-[#111A20] overflow-x-hidden max-w-[100vw]" }>
+        <Header />
+      {children}
+      </body>
     </html>
   )
 }
